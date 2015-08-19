@@ -32,6 +32,16 @@ $(document).ready(function() {
     powerSaveChange();
   })
 
+  // $('#weatherform').submit(function() {
+  //   displayCity();
+  //   displayWeather();
+  // })
+
+  // $('#city').show(function() {
+    
+  // })
+
+
   function powerSaveChange() {
     if ($("#power_save").is(':checked') ) {
       thermostat.powerSaveOn();
@@ -40,6 +50,6 @@ $(document).ready(function() {
       thermostat.powerSaveOff();
     }
   }
-})
+});
 
 

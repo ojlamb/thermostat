@@ -7,13 +7,25 @@
   <style>
     body { background: url("public/images/green-cornfield.jpg");
            background-size: cover; }
-    section {text-align: center; margin-top: 250px;
+    section {text-align: center; margin-top: 100px;
              font-size: 1.9em;
             color: white; }
   </style>
 </head>
 
 <body>
+
+  <section>
+    <!-- Enter City: <form id="weatherform" method='post'>
+        <input type="text" id="city">
+        <input class="get_weather" type="submit" value="Enter">
+    </form> -->
+    <button class="get_weather">Weather Today</button>
+    <section class="weather"></section>
+
+    <div id="city"></div>
+    
+  </section>
   <section>
 
   <h1 id="temperature"> </h1>
@@ -24,9 +36,12 @@
 
 </section>
 
+
+
 </body>
 
 <script src="src/Thermostat.js"></script>
 <script src="src/app.js"></script>
+<script src="src/weather.js"></script>
 
 </html>
