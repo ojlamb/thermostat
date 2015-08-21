@@ -11,6 +11,7 @@ displayTemp = function() {
 
 $(document).ready(function() {
   $("#temperature").show(function() {
+    getTemperature();
     displayTemp();
     TempColour();
   })
@@ -44,15 +45,24 @@ $(document).ready(function() {
   }
   function postTemperature() {
     var current_temperature = temperature.innerHTML;
-    // var jdata = JSON.stringify({temp: current_temperature});
-    // var jdata = {key: current_temperature}.to_json;
 
     $.ajax({
       type: 'POST',
       url: 'http://localhost:9292/',
       data: current_temperature,
-      success: console.log("jquery post completed"),
       // dataType: 'json'
+    })
+  }
+  function getTemperature() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:9292/',
+      datatype:'json' ,
+      success: function(result){
+        console.log(result)
+        $('#temperature').html(result);
+        //thermostat.temperature = result
+      },
     })
   }
 });

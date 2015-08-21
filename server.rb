@@ -3,10 +3,15 @@ require 'sinatra/base'
 
 class Bla < Sinatra::Base
   set :public_folder, proc { File.join(root) }
-
+  enable :sessions
   post '/' do
-    puts params
-    puts params.keys[0]
+    @temp = params.keys[0]
+    p @temp
+    session['temp'] = @temp
+  end
+
+  get '/' do
+    session['temp']
   end
 
 end
