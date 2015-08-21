@@ -8,7 +8,7 @@ var Thermostat = function() {
 
 
 Thermostat.prototype.showTemp = function() {
-  return this.temperature + ' C';
+  return this.temperature;
 };
 
 Thermostat.prototype.increaseTemp = function() {
@@ -45,9 +45,9 @@ Thermostat.prototype.powerSaveOff = function() {
 
 Thermostat.prototype.energyUsage = function() {
   if (this.temperature < 18) {
-    return "green";
+    return "#90EE90";
   } else if (this.temperature > 25) {
-    return "red";
+    return "#FF717E";
   } else {
   return "yellow";
   }

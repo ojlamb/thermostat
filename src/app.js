@@ -5,7 +5,7 @@ TempColour = function() {
 }
 
 displayTemp = function() {
-  temperature.innerHTML = thermostat.showTemp();
+  temperature.innerHTML = thermostat.showTemp()+"&#8451";
 }
 
 $(document).ready(function() {
@@ -28,22 +28,12 @@ $(document).ready(function() {
     displayTemp();
     TempColour();
   })
-  $('#power_save').click(function() {
+  $('#powerSave').click(function() {
     powerSaveChange();
   })
 
-  // $('#weatherform').submit(function() {
-  //   displayCity();
-  //   displayWeather();
-  // })
-
-  // $('#city').show(function() {
-    
-  // })
-
-
   function powerSaveChange() {
-    if ($("#power_save").is(':checked') ) {
+    if ($("#powerSave").is(':checked') ) {
       thermostat.powerSaveOn();
       displayTemp();
     } else {
@@ -51,5 +41,3 @@ $(document).ready(function() {
     }
   }
 });
-
-

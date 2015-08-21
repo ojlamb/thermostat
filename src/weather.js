@@ -15,7 +15,7 @@ $(document).ready(function(){
   };
 
   function showTemp(info) {
-    $(".cityTemp").text(info.list[0].main.temp);
+    $("#cityTemp").text(Math.round(info.list[0].temp.day));
   }
   function weatherInfo() {
     var city = $("#city").val();
@@ -23,6 +23,7 @@ $(document).ready(function(){
     $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&mode=json&units=metric&cnt=10",function(result){
             showWeather(result);
             showTemp(result);
+            console.log(result);
             });
         };
 

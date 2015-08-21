@@ -1,0 +1,54 @@
+body{
+  background-image: url("Denver.jpg");
+  height: 100%
+  text-align: center;
+}
+
+header{
+  padding-top: 50px;
+}
+.city{
+  font-size: 20px;
+}
+
+#title{
+  font-size: 30px;
+}
+#inputArea{
+  padding-top: 5px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#displayArea{
+  text-align: center;
+  padding-right: 20px;
+  margin-right: 10%;
+  float:right;
+  display: inline-block;
+}
+#buttonArea{
+  text-align: center;
+  padding-top: 10px;
+  display: inline-block;
+  margin-left: 46%;
+  /*margin-right: 80%;*/
+}
+
+#buttonArea{
+  float: center;
+}
+
+#increaseTemp{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#decreaseTemp{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#temp{
+  padding-bottom: 20px;
+}
