@@ -44,7 +44,9 @@ $(document).ready(function() {
   }
   function postTemperature() {
     var current_temperature = temperature.innerHTML;
-    var current_temperature = JSON.stringify({temp: current_temperature});
+    // var jdata = JSON.stringify({temp: current_temperature});
+    // var jdata = {key: current_temperature}.to_json;
+
     $.ajax({
       type: 'POST',
       url: 'http://localhost:9292/',
