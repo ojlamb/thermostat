@@ -5,7 +5,8 @@ TempColour = function() {
 }
 
 displayTemp = function() {
-  temperature.innerHTML = thermostat.showTemp()+"&#8451";
+  // temperature.innerHTML = thermostat.showTemp()+"&#8451";
+  temperature.innerHTML = thermostat.showTemp();
 }
 
 $(document).ready(function() {
@@ -16,6 +17,7 @@ $(document).ready(function() {
   $("#increase").click(function() {
     thermostat.increaseTemp();
     displayTemp();
+    postTemperature();
     TempColour();
   })
   $("#decrease").click(function() {
@@ -39,5 +41,16 @@ $(document).ready(function() {
     } else {
       thermostat.powerSaveOff();
     }
+  }
+  function postTemperature() {
+    var current_temperature = temperature.innerHTML;
+    var current_temperature = JSON.stringify({temp: current_temperature});
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:9292/',
+      data: current_temperature,
+      success: console.log("jquery post completed"),
+      dataType: 'json'
+    })
   }
 });
