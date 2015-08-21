@@ -52,7 +52,7 @@ $(document).ready(function() {
       url: 'http://localhost:9292/',
       data: current_temperature,
       success: console.log("jquery post completed"),
-      dataType: 'json'
+      // dataType: 'json'
     })
   }
 });
